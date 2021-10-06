@@ -1,4 +1,4 @@
-﻿namespace WebApp.Models
+﻿namespace TheTopPost.Models
 {
     public class Message
     {

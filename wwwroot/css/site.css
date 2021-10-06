@@ -33,7 +33,7 @@ footer {
     border-top: 1px solid #407c96;
 }
 
-.footerText{
+.footerText {
     color: #6b6b6b;
     margin-left: 20px;
     margin-top: 10px;
@@ -48,12 +48,12 @@ a.head {
     color: #E6F0F0;
 }
 
-a.addPost { 
-    right: 14px;    
+a.addPost {
+    right: 14px;
 }
 
-a.topPost { 
-    left: 14px;  
+a.topPost {
+    left: 14px;
 }
 
 .posts {
@@ -121,7 +121,7 @@ a.topPost {
 }
 
 .raiting {
-    float: left;  
+    float: left;
 }
 
 .raitingValue {
