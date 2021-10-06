@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U+bu+Y/KyAmuH+OK1CZTZeJYKjtxzv4tW94rRY58Gk9cMDesC0oTEcxNAH6sybeRBkXocf0f3C1sEBqCKlJTMQ==",
+  "dgSpecHash": "rObtUx9SSEv0P85V6gbrelbO+WMrfWOlA/6agboq3lPDDl9fOQ1n/+wo8golYRY52mTLYda1al1PPbxsJoXSPQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\WebApp\\TheTopPost.csproj",
+  "projectFilePath": "D:\\Projects\\TheTopPost\\TheTopPost(Razor).csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Validay\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Validay\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

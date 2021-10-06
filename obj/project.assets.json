@@ -6075,11 +6075,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\WebApp\\TheTopPost.csproj",
-      "projectName": "TheTopPost",
-      "projectPath": "D:\\Projects\\WebApp\\TheTopPost.csproj",
+      "projectUniqueName": "D:\\Projects\\TheTopPost\\TheTopPost(Razor).csproj",
+      "projectName": "TheTopPost(Razor)",
+      "projectPath": "D:\\Projects\\TheTopPost\\TheTopPost(Razor).csproj",
       "packagesPath": "C:\\Users\\Validay\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\WebApp\\obj\\",
+      "outputPath": "D:\\Projects\\TheTopPost\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

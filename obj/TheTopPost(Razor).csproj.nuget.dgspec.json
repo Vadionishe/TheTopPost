@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\TheTopPost\\TheTopPost.csproj": {}
+    "D:\\Projects\\TheTopPost\\TheTopPost(Razor).csproj": {}
   },
   "projects": {
-    "D:\\Projects\\TheTopPost\\TheTopPost.csproj": {
+    "D:\\Projects\\TheTopPost\\TheTopPost(Razor).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\TheTopPost\\TheTopPost.csproj",
-        "projectName": "TheTopPost",
-        "projectPath": "D:\\Projects\\TheTopPost\\TheTopPost.csproj",
+        "projectUniqueName": "D:\\Projects\\TheTopPost\\TheTopPost(Razor).csproj",
+        "projectName": "TheTopPost(Razor)",
+        "projectPath": "D:\\Projects\\TheTopPost\\TheTopPost(Razor).csproj",
         "packagesPath": "C:\\Users\\Validay\\.nuget\\packages\\",
         "outputPath": "D:\\Projects\\TheTopPost\\obj\\",
         "projectStyle": "PackageReference",
