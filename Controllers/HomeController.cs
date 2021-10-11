@@ -1,61 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 using TheTopPost.Models;
 
 namespace TheTopPost.Controllers
 {
-    public static class StorageMessages
-    {
-        public static bool isInit;
-        public static List<Message> Messages { get; set; }
-
-        public static void Init()
-        {
-            Messages = new List<Message>();
-
-            for (int i = 0; i < 50; i++)
-            {
-                Messages.Add(new Message
-                {
-                    Id = i,
-                    Date = "21.04.2021",
-                    Ip = "243243",
-                    NameImage = "123.jpeg",
-                    Raiting = i,
-                    Text = "1egr gre weg we gewrg wrgwergwerg wergwergwrthpos9[fhwrty wrtohirethy"
-                });
-            }
-
-            isInit = true;
-        }
-    }
-
     public class HomeController : Controller
     {
+        private readonly IConfiguration _config;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration config)
         {
             _logger = logger;
-
-            if (!StorageMessages.isInit)
-                StorageMessages.Init();
+            _config = config;
         }
 
         public IActionResult Index(int? page)
         {
-            page = page ?? 1;
+            return Top(page);
+        }
 
+        [HttpGet]
+        public IActionResult Top(int? page)
+        {
+            page = page ?? 1;
+           
             PagesTopModel model = new PagesTopModel();
-            int endItems = StorageMessages.Messages.Count % model.PageItemCount;
+            List<Message> messages = DataWorker.GetAllMessage();
+            int endItems = messages.Count % model.PageItemCount;
 
             model.PageCurrent = (int)page;
-            model.PageCount = StorageMessages.Messages.Count / model.PageItemCount;
+            model.PageCount = messages.Count / model.PageItemCount;
             model.Pages = new List<int>();
 
             if (endItems > 0)
@@ -77,11 +57,14 @@ namespace TheTopPost.Controllers
                 model.Pages = model.Pages.Where(p => p > 0 && p < model.PageCount + 1).ToList();
             }
 
-            StorageMessages.Messages.Sort((x, y) => y.Raiting.CompareTo(x.Raiting));
+            messages.Sort((x, y) => y.Raiting.CompareTo(x.Raiting));
 
-            model.DisplayMessages = StorageMessages.Messages.Skip(((int)page - 1) * model.PageItemCount).Take(model.PageItemCount).ToList();
+            model.DisplayMessages = messages.Skip(((int)page - 1) * model.PageItemCount).Take(model.PageItemCount).ToList();
 
-            return View(model);
+            if (page < 1 || page > model.PageCount)
+                return View("PageNotFound");
+
+            return View("Top", model);
         }
 
         public IActionResult Privacy()
@@ -95,28 +78,37 @@ namespace TheTopPost.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        //public IActionResult OnPostUpRaiting(long id, int page)
-        //{
-        //    Message message = StorageMessages.Messages.Find(m => m.Id == id);
+        [ValidateRecaptcha]
+        [HttpPost]
+        public IActionResult UpRaiting(long id, int page)
+        {
+            if (ModelState.IsValid)
+                DataWorker.ChangeRaiting(1, id);
 
-        //    if (message != null)
-        //    {
-        //        message.Raiting++;
-        //    }
+            return Top(page);
+        }
 
-        //    return RedirectToPagePreserveMethod("Index", "Top", new { page });
-        //}
+        [ValidateRecaptcha]
+        [HttpPost]
+        public IActionResult DownRaiting(long id, int page)
+        {
+            if (ModelState.IsValid)
+                DataWorker.ChangeRaiting(-1, id);
 
-        //public IActionResult OnPostDownRaiting(long id, int page)
-        //{
-        //    Message message = StorageMessages.Messages.Find(m => m.Id == id);
+            return Top(page);
+        }
 
-        //    if (message != null)
-        //    {
-        //        message.Raiting--;
-        //    }
+        [HttpPost]
+        public IActionResult CapchaConfirm(long id, int page, TypeChange typeChange)
+        {
+            ChangerRaitingModel model = new ChangerRaitingModel
+            {
+                Id = id,
+                Page = page,
+                TypeChange = typeChange
+            };
 
-        //    return RedirectToPagePreserveMethod("Index", "Top", new { page });
-        //}
+            return View(model);
+        }
     }
 }

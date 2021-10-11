@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheTopPost", "TheTopPost.csproj", "{F431C3AD-CE20-419F-AB9A-26C6B6DA1809}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendCodeGenerator", "..\SendCodeGenerator\SendCodeGenerator.csproj", "{D0846767-70B3-4415-A3D1-70667462E2B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F431C3AD-CE20-419F-AB9A-26C6B6DA1809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F431C3AD-CE20-419F-AB9A-26C6B6DA1809}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F431C3AD-CE20-419F-AB9A-26C6B6DA1809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0846767-70B3-4415-A3D1-70667462E2B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0846767-70B3-4415-A3D1-70667462E2B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0846767-70B3-4415-A3D1-70667462E2B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0846767-70B3-4415-A3D1-70667462E2B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

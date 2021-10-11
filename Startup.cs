@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 
 namespace TheTopPost
 {
@@ -17,7 +18,12 @@ namespace TheTopPost
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddRecaptcha(new RecaptchaOptions
+            {
+                SiteKey = ConnectionManager.ConnectionConfiguration["ConnectionCapchaSite"],
+                SecretKey = ConnectionManager.ConnectionConfiguration["ConnectionCapchaSecret"],
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -40,7 +46,7 @@ namespace TheTopPost
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{page?}");
+                    pattern: "{controller=Home}/{action=Top}/{page?}");
             });
         }
     }

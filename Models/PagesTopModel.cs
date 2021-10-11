@@ -4,6 +4,8 @@ namespace TheTopPost.Models
 {
     public class PagesTopModel
     {
+        public static bool isInitialized { get; set; }
+
         public int PageCurrent { get; set; }
         public int PageCount { get; set; }
         public int PageItemCount { get; set; }
@@ -13,9 +15,10 @@ namespace TheTopPost.Models
 
         public PagesTopModel()
         {
-            MaxPageVisible = 5;
-            PageItemCount = 6;
+            MaxPageVisible = 7;
+            PageItemCount = 15;
             DisplayMessages = new List<Message>();
+            Pages = new List<int>();
         }
     }
 }
