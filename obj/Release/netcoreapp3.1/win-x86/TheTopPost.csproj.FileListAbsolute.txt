@@ -129,10 +129,6 @@ D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\TheTopPost.RazorAssembl
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\TheTopPost.TagHelpers.input.cache
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\TheTopPost.TagHelpers.output.cache
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\TheTopPost.RazorCoreGenerate.cache
-D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Home\CapchaConfirm.cshtml.g.cs
-D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Home\PageNotFound.cshtml.g.cs
-D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Home\Privacy.cshtml.g.cs
-D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Home\Top.cshtml.g.cs
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -148,3 +144,11 @@ D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\TheTopPost.dll
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\TheTopPost.pdb
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\TheTopPost.genruntimeconfig.cache
 D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\TheTopPost.csprojAssemblyReference.cache
+D:\Projects\TheTopPost\bin\Release\netcoreapp3.1\win-x86\connectionsdata.Development.json
+D:\Projects\TheTopPost\bin\Release\netcoreapp3.1\win-x86\connectionsdata.json
+D:\Projects\TheTopPost\bin\Release\netcoreapp3.1\win-x86\SixLabors.ImageSharp.dll
+D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Main\AddPost.cshtml.g.cs
+D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Main\CapchaConfirm.cshtml.g.cs
+D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Main\InfoPage.cshtml.g.cs
+D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Main\Privacy.cshtml.g.cs
+D:\Projects\TheTopPost\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Main\Top.cshtml.g.cs

@@ -46,7 +46,7 @@ namespace TheTopPost
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Top}/{page?}");
+                    pattern: "{controller=Main}/{action=Top}/{page?}");
             });
         }
     }

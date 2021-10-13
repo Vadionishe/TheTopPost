@@ -26,10 +26,16 @@ namespace TheTopPost.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("CodeId")
-                        .HasColumnType("bigint");
+                    b.Property<byte[]>("BytesImage")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Date")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageMimeType")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ip")
@@ -45,8 +51,6 @@ namespace TheTopPost.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CodeId");
 
                     b.ToTable("Messages");
                 });
@@ -67,15 +71,6 @@ namespace TheTopPost.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SendCodes");
-                });
-
-            modelBuilder.Entity("TheTopPost.Models.Message", b =>
-                {
-                    b.HasOne("TheTopPost.Models.SendCode", "Code")
-                        .WithMany()
-                        .HasForeignKey("CodeId");
-
-                    b.Navigation("Code");
                 });
 #pragma warning restore 612, 618
         }

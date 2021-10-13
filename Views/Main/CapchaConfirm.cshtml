@@ -1,0 +1,33 @@
+﻿@using PaulMiami.AspNetCore.Mvc.Recaptcha
+@model ChangerRaitingModel
+
+<div class="posts">
+    <div class="row">
+        <h2 style="color:black">
+            Confirm that you are not a robot!
+        </h2>
+    </div>
+    <br>
+    <div class="row">
+        <form id="confirm" method="post" asp-controller="Main" asp-action="@(Model.TypeChange == TypeChange.Up ? "UpRaiting" : "DownRaiting")">
+            <recaptcha size="RecaptchaSize.Normal" />
+            <input type="hidden" name="id" value="@Model.Id">
+            <input type="hidden" name="page" value="@Model.Page">
+            <input id="noclick" type="submit" style="visibility:hidden">
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <recaptcha-script />
+    <script>
+        function recaptchaValidated() {
+            function goToPage() {
+                var buttonnoclick = document.getElementById("noclick");
+                buttonnoclick.click();
+            }
+
+            setTimeout(goToPage, 2000);
+        }
+    </script>
+}

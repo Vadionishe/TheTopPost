@@ -26,7 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nexus.transset.ru/repository/nuget-private/": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -59,6 +60,10 @@
             "PaulMiami.AspNetCore.Mvc.Recaptcha": {
               "target": "Package",
               "version": "[1.2.2, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[1.0.4, )"
             }
           },
           "imports": [

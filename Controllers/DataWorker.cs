@@ -37,21 +37,29 @@ namespace TheTopPost.Controllers
             return "";
         }
 
-        public static bool UseSendCode(SendCode sendCodeUse)
+        public static bool UseSendCode(SendCode sendCodeUse, out string info)
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                SendCode sendCode = db.SendCodes.FirstOrDefault(c => c.Id == sendCodeUse.Id);
+                SendCode sendCode = db.SendCodes.FirstOrDefault(c => c.Code == sendCodeUse.Code);
 
                 if (sendCode != null)
                 {
-                    sendCode.IsUsed = true;
+                    if (!sendCode.IsUsed)
+                    {
+                        sendCode.IsUsed = true;
+                        info = "Success!";
 
-                    db.SaveChanges();
+                        db.SaveChanges();
 
-                    return true;
+                        return true;
+                    }
+
+                    info = "The code has already been used!";
                 }
             }
+
+            info = "Code not found!";
 
             return false;
         }
@@ -60,14 +68,18 @@ namespace TheTopPost.Controllers
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                db.Messages.Add(new Message 
+                db.Messages.Add(new Message
                 {
                     Ip = message.Ip,
                     NameImage = message.NameImage,
                     Raiting = message.Raiting,
                     Date = message.Date,
-                    Text = message.Text
+                    Text = message.Text,
+                    BytesImage = message.BytesImage,
+                    ImageMimeType = message.ImageMimeType,
+                    Code = message.Code
                 });
+
                 db.SaveChanges();
             }
 
@@ -96,6 +108,30 @@ namespace TheTopPost.Controllers
             using (ApplicationContext db = new ApplicationContext())
             {
                 return db.Messages.ToList();
+            }
+        }
+
+        public static Message EditMessage(Message editableMessage)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Message message = db.Messages.FirstOrDefault(m => m.Id == editableMessage.Id);
+
+                if (message != null)
+                {
+                    message.BytesImage = editableMessage.BytesImage;
+                    message.Code = editableMessage.Code;
+                    message.Date = editableMessage.Date;
+                    message.ImageMimeType = editableMessage.ImageMimeType;
+                    message.Ip = editableMessage.Ip;
+                    message.NameImage = editableMessage.NameImage;
+                    message.Raiting = editableMessage.Raiting;
+                    message.Text = editableMessage.Text;
+
+                    db.SaveChanges();
+                }
+
+                return message;
             }
         }
     }

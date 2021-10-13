@@ -9,8 +9,10 @@ namespace TheTopPost.Models
         public string Ip { get; set; }
         public string Text { get; set; }
         public string NameImage { get; set; }
+        public byte[] BytesImage { get; set; }
+        public string ImageMimeType { get; set; }
         public string Date { get; set; }
         public long Raiting { get; set; }
-        public SendCode Code { get; set; }
+        public string Code { get; set; }
     }
 }

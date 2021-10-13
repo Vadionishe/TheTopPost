@@ -1,0 +1,55 @@
+﻿@using PaulMiami.AspNetCore.Mvc.Recaptcha
+
+<h2 style="margin-top:15px">Add new Post</h2>
+<div class="posts" style="margin-top:10px">
+    <div class="row">        
+        <input form="sendForm" name="image" type="file" id="inputfile" accept="image/*" style="display:none" onchange="preview_image(event)">
+        <label for="inputfile" class="button loadImage">
+            <span class="textPost">
+                Choose image
+            </span>
+        </label>
+    </div>
+    <div class="row">
+        <div class="post">
+            <img form="sendForm" name="image" id="output_image" class="pic" src="/images/DefaultImage.jpg">
+            <textarea form="sendForm" required name="textPost" class="scroller newPost" maxlength="255" placeholder="Write your post here..."></textarea>
+            <div class="datePost">
+                @DateTime.Now.ToString("MM.dd.yyyy")
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <textarea form="sendForm" required name="codePost" class="sendCode" maxlength="50" placeholder="Write your code here..."></textarea>
+    </div>
+    <div class="row" style="margin:15px">
+        <form method="post" id="sendForm" asp-controller="Main" asp-action="SendPost" enctype="multipart/form-data">
+            <recaptcha size="RecaptchaSize.Normal" />
+        </form>
+    </div>
+    <div class="row">
+        <input form="sendForm" id="confirm" type="submit" class="button sendButton" style="visibility:hidden" value="Send Post">
+    </div>
+</div>
+
+@section Scripts {
+    <recaptcha-script />
+
+    <script>
+        function preview_image(event) {
+            var reader = new FileReader();
+
+            reader.onload = function () {
+                var output = document.getElementById('output_image');
+                output.src = reader.result;
+            }
+
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function recaptchaValidated() {
+            var buttonnoclick = document.getElementById("confirm");
+            buttonnoclick.style.visibility = "visible"
+        }
+    </script>
+}

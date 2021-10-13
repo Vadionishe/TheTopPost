@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YLglZuc1lkCo6kDlivNsMg2XIeC9oJHRaycZzvh9FPgMdkOzJD1fyO0nkAuFqjLHfipq9RAGzdYI4Kh9CbI8Jw==",
+  "dgSpecHash": "6+eyXMqciER6khSgmQq4riIp8I7w0Iub1kjkkHqqZfHjuvdzwqM4GlG1EQE5PUfHLgNQLB31UAJ5LIGnnT8vgA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\TheTopPost\\TheTopPost.csproj",
   "expectedPackageFiles": [
@@ -129,6 +129,7 @@
     "C:\\Users\\Validay\\.nuget\\packages\\runtime.win.system.net.primitives\\4.3.0\\runtime.win.system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Validay\\.nuget\\packages\\runtime.win.system.net.sockets\\4.3.0\\runtime.win.system.net.sockets.4.3.0.nupkg.sha512",
     "C:\\Users\\Validay\\.nuget\\packages\\runtime.win.system.runtime.extensions\\4.3.0\\runtime.win.system.runtime.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Validay\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512",
     "C:\\Users\\Validay\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Validay\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Validay\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

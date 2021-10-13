@@ -1,0 +1,13 @@
+﻿@using TheTopPost.Models
+@model InfoModel
+
+<div class="posts">
+    <div class="row" style="min-height:500px">
+        <h2 style="color:black; font-size:60px">
+            @if (Model.Info != null)
+            {
+                @Model.Info
+            }
+        </h2>
+    </div>
+</div>
